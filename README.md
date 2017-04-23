@@ -7,7 +7,7 @@ palette_size = 256 colors  (4 bytes/color)
 
 file_size = palette_size * 4 + 24
 
-bytes: reverse order (litte-endian), e.g.: file_size - 8 = 256*4 + 24 - 8 = 4* 256 + 16 = 0x0410 => 10 04 00 00
+bytes: reverse order (litte-endian), e.g.: file_size - 8 = 256x4 + 24 - 8 = 4 x 256 + 16 = 0x0410 => 10 04 00 00
 
 ```
 ascii   :'RIFF'           hex  :   52 49 46 46
