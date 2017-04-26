@@ -30,10 +30,10 @@ pos = np.round(np.linspace(1,palette_size,len(colors)))
 
 data_size = palette_size * 4
 file_size = data_size + 24
-line1 = '\x52\x49\x46\x46'.encode() # == 'RIFF'
+line1 = b'RIFF' #'\x52\x49\x46\x46'.encode() # == 'RIFF'
 line2 = struct.pack('<I',file_size-8)
-line3 = '\x50\x41\x4C\x20'.encode()  # == ' PAL'
-line4 = '\x64\x61\x74\x61'.encode() # == 'data'
+line3 = b' PAL' #'\x50\x41\x4C\x20'.encode()  # == ' PAL'
+line4 = b'data' #'\x64\x61\x74\x61'.encode() # == 'data'
 line5 = struct.pack('<I',file_size - 20)
 line6 = struct.pack('<BBH',0,3,palette_size)
 
