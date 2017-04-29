@@ -7,7 +7,7 @@ palette_size = 256 colors  (4 bytes/color)
 
 file_size = palette_size * 4 + 24 = 1048
 
-bytes: reverse order (litte-endian), e.g.: file_size - 8 = 1040 = 0x0410 => 10 04 00 00
+bytes: reverse order (little-endian), e.g.: file_size - 8 = 1040 = 0x0410 => 10 04 00 00
 
 ```
 ascii   :'RIFF'           hex  :   52 49 46 46
@@ -20,4 +20,4 @@ number  :RGBA components  hex  :   FF 00 00 00 #for red color
 ```
 R-code generates files with HEX codes, which requires conversion Hex-> Ascii (by notepad++)
 
-Pyhton generates ready binary file
+Python generates ready binary file
