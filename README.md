@@ -5,14 +5,14 @@ Palette file (\*.pal) is a binary file consisiting of the list of colors in hexa
 Recent versions of Origin have nice set of palettes but sometimes own-designed one is desired/preferred.
 
 PAL file consists of the header (24 bytes) and the list of colors, 4 bytes per color (RGBA). The header includes:
-- ASCII text '**RIFF**'
-- INT number *file_size-8* (4 bytes, little-endian)
-- ASCII text '**PAL data**'
-- INT number *file_size-20* (4 bytes, little-endian)
-- BYTES 0, 3
-- SHORT INT palette_size (2 bytes, little-endian)
+- ASCII text '**RIFF**';
+- INT number *file_size-8* (4 bytes, little-endian);
+- ASCII text '**PAL data**';
+- INT number *file_size-20* (4 bytes, little-endian);
+- BYTES 0, 3;
+- SHORT INT palette_size (2 bytes, little-endian),
 
-, where *palette_size* is the number of colors, and *file_size* = *palette_size*\*4
+where *palette_size* is the number of colors, and *file_size* = *palette_size*\*4 + 24 + *anything insignificant*. 
 
 ## Example
 Rainbow.pal, one of the default palette from OriginLab
@@ -22,11 +22,11 @@ Rainbow.pal, one of the default palette from OriginLab
 First 8\*4=32 bytes: 
 
 ```
-f = open('rainbow.pal', 'rb')
-for i in range(8):
-    l = f.read(4)
-    print(l)
-f.close()
+with open('rainbow.pal', 'rb') as f:
+    for i in range(8):
+        l = f.read(4)
+        print(l)
+
 ```
 
 Output:
