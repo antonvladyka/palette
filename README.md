@@ -11,6 +11,7 @@ PAL file consists of the header (24 bytes) and the list of colors, 4 bytes per c
 - INT number *file_size-20* (4 bytes, little-endian)
 - BYTES 0, 3
 - SHORT INT palette_size (2 bytes, little-endian)
+
 , where *palette_size* is the number of colors, and *file_size* = *palette_size*\*4
 
 ## Example
