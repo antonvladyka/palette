@@ -16,6 +16,7 @@ import numpy as np
 
 
 #cols = ['#67001f','#b2182b','#d6604d','#f4a582','#fddbc7','#f7f7f7','#d1e5f0','#92c5de','#4393c3','#2166ac','#053061']
+cols = ['#0074F4','#0088F3','#0090D1','#009296','#009053','#148A00','#737E00','#AA6800','#D3471B','#E5215A']
 #cols = ['#984ea3','#377eb8','#4daf4a','#ffff33','#ff7f00','#e41a1c']
 #colors = [[55,49,149],[1,142,248],[73,219,112],[255,255,154],[188,160,112],[143,97,84],[182,154,143],[255,255,255]]
 #colors = [[0,63,191],[0,127,159],[127,191,127],[255,255,95],[223,127,63],[191,0,31],[159,0,0]]
@@ -29,13 +30,13 @@ def hex2array(colors):
     for color in colors:
         tmp.append([int(color[1:3],16),int(color[3:5],16),int(color[5:],16)])
     return tmp
-def palette(colors, palette_size = 256, out_name = 'palette.pal', image = False):
+def palette(colors, pal_size = 256, out_name = 'palette.pal', image = False):
     colors = colors
     if type(colors) == str:
         colors = open(colors,'r').read().split()
     if type(colors[0]) == str:
         colors = hex2array(colors)
-    palette_size = int(palette_size)
+    palette_size = int(pal_size)
     pos = np.linspace(1,palette_size,len(colors)).astype(int)
     data_size = palette_size * 4
     file_size = data_size + 24

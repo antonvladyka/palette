@@ -40,6 +40,8 @@ cols <- c('#007F3F','#7FBF7F','#FFFF5F','#DF7F3F','#BF001F')
 cols <-  c('#7E2F8E','#0072BD','#4DBEEE','#77AC30','#EDB120','#D95319','#A2142F')
 cols <- cols[c(7,1:6)]
 
+# HCL colors at C = 75, L = 50
+cols = c('#0074F4','#0088F3','#0090D1','#009296','#009053','#148A00','#737E00','#AA6800','#D3471B','#E5215A')
 palette.size = 253
 cols = brewer.pal(9,'Set1')
 cols <- c('#FFFFFF',cols[2],cols[3],cols[6],cols[1],'#0D070C')
@@ -120,7 +122,7 @@ for (i in 1:palette.size){
 }
   
 full = rbind(header,data)
-write.table(full,file='matlab_cmap.pal',sep = '',row.names = F, col.names = F,quote = F,eol='')
+write.table(full,file='hcl7550.pal',sep = '',row.names = F, col.names = F,quote = F,eol='')
 #convert palette.pal from hex to ascii in notepad++
 
 # data = outer(seq(-3,3,0.02),seq(-3,3,0.02),function(i,j) sin(i)*cos(j+0.2*i)*exp(-0.2*(i^2+j^2/3)))
@@ -130,7 +132,8 @@ write.table(full,file='matlab_cmap.pal',sep = '',row.names = F, col.names = F,qu
 
 # 
 # 
-
+cols = hcl(h=seq(240,15,length=5),c=75,l=50)
+cols = c('#ffffff',cols,'#000000')
 cols = brewer.pal(9,'Set1')
 colsredbu = brewer.pal(5,'RdBu')
 cols = c(colsredbu[5:4],"#f2BFf2",colsredbu[2:1])
